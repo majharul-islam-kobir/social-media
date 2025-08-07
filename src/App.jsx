@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import CreatePost from './pages/CreatePost';
 import Layout from './pages/Layout';
 import { useUser } from '@clerk/clerk-react';
+import {Toaster} from "react-hot-toast"
 
 function App() {
   const { user, isLoaded } = useUser();
@@ -18,6 +19,8 @@ function App() {
   }
 
   return (
+    <>
+    <Toaster/>
     <Routes>
       <Route
         path="/"
@@ -32,6 +35,7 @@ function App() {
         <Route path="create-post" element={<CreatePost />} />
       </Route>
     </Routes>
+    </>
   );
 }
 
